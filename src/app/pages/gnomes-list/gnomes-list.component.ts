@@ -12,18 +12,32 @@ import { DataListService } from '../../services/data-list.service';
 export class GnomesListComponent implements OnInit {
 
   gnomes: any;
-
-  ngOnInit() {
-    this.DataService.getAllGnomes()
-    .then((result) => {
-     this.gnomes = result;
-    console.log(this.gnomes);
-    })
-    .catch((err) => {
-      console.log(err);
-    });
-  }
+  professions: Array<string> = [];
 
   constructor(private DataService: DataListService) {}
 
+  ngOnInit() {
+    this.getData();
+  }
+
+  getData() {
+    this.DataService.getAllGnomes()
+      .then((result) => {
+        this.gnomes = result.Brastlewark;
+        this.getAllProfessions(this.gnomes);
+        console.log(this.gnomes);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+
+  }
+
+  getAllProfessions(result) {
+    for (let i = 0; i < result.length; i++) {
+      for (let ix = 0; ix < result[i].professions.length; ix++) {
+        console.log(result[i].professions[ix]);
+      }
+    }
+  }
 }
