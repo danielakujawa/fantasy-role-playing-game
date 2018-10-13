@@ -1,9 +1,15 @@
-<div>
-  <h1>Gnomes Town</h1>
-  <select name="professions-list" ngModel id="professions-list" (change)="submit($event.target.value)">
-    <option value="">Find Gnomes by profession</option>
-    <option value="{{profession}}" *ngFor="let profession of arrayUniqueProfessions">{{profession}}</option>
-  </select>
+<div class="container applicants-page">
+    <h1>Gnomes Town</h1>
+
+  <div class="sort">
+    <select class="sortButton" name="professions-list" ngModel id="professions-list" (change)="submit($event.target.value)">
+      <option value="">Find Gnomes by profession</option>
+      <option value="{{profession}}" *ngFor="let profession of arrayUniqueProfessions">{{profession}}</option>
+    </select>
+  </div>
+    
+  <div class="cards-container">
+    <app-gnome-card *ngFor="let gnome of arrayFilteredGnomes" [gnome]="gnome"></app-gnome-card>
+  </div>
 </div>
 
-  <app-gnome-card *ngFor="let gnome of arrayFilteredGnomes" [gnome]="gnome"></app-gnome-card>

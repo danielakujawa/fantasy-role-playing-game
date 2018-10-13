@@ -15,7 +15,7 @@ export class GnomeCardComponent implements OnInit {
   ngOnInit() {
   }
 
-  getGnomeId(id){
+  getGnomeId(id) {
     localStorage.setItem('id', id);
   }
 

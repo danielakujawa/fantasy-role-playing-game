@@ -1,1 +1,253 @@
 /* You can add global styles to this file, and also import other style files */
+
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/* ---- typography ---- */
+
+body {
+  color: #111;
+  font-size: 16px;
+  line-height: 147%;
+  font-family: 'Assistant-Regular', sans-serif;
+}
+
+h1 {
+  margin-top: 0px;
+  font-family: 'Oswald', sans-serif;
+  font-size: 36px;
+  line-height: 36px;
+  text-transform: uppercase;
+}
+
+h2 {
+  margin-top: 0px;
+  font-family: 'Oswald', sans-serif;
+  font-size: 24px;
+  line-height: 30px;
+  text-transform: uppercase;
+}
+
+h3 {
+  margin-top: 0px;
+  font-family: 'Oswald', sans-serif;
+  font-size: 20px;
+  line-height: 24px;
+  text-transform: uppercase;
+}
+
+p {
+  margin: 0;
+  font-family: 'Assistant', sans-serif;
+  font-size: 16px;
+  line-height: 1.34;
+}
+
+
+/* #site-main {
+  min-height: 
+} */
+
+.container {
+  margin: 0 20px;
+}
+
+@media(min-width: 520px){
+  
+  .container.compact {
+    max-width: 480px;
+    margin: 0 auto;
+    padding-bottom: 40px;
+  }
+
+}
+
+/* ------- home-page -------- */
+
+/* -- cards home -- */
+.cards-container{
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.profile-pic-home {
+  border-bottom: 10px solid #d41e1e;
+}
+
+.card-home {
+  background: #212322;
+  margin: 0 20px 40px 20px;
+  max-width: 520px;
+}
+
+.card-home img {
+  width: 100%;
+}
+
+.card-home .description {
+  padding: 0 10px 10px 10px;
+}
+
+.card-home p {
+  color: #FFFFFF;
+  margin-bottom: 20px;
+}
+
+.card-home h3 {
+ margin-top: 0;
+ color: #f2f2f2;
+}
+
+.card-home a {
+  text-decoration: none;
+ }
+
+.button {
+  font-family: 'Oswald', sans-serif;
+  color: #FFFFFF;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 4px;
+  background-color: #ff3636;
+  width: 100%;
+  line-height: 55px;
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  border: none;
+}
+
+
+
+
+/* -- web version --- home -- */
+
+@media (min-width: 767px ){
+
+  .container {
+    max-width: 728px;
+    margin: 0 auto;
+  }
+
+  .cards-container {
+    max-width: 728px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .card-home {
+    width: 100%;
+    max-width: 280px;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .card-home img {
+    object-fit: cover;
+    height: 250px;
+  }
+
+  .card-home-content {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .btn-cards {
+    align-self: flex-end;
+  }
+
+  /* -- applicants page -- */
+
+.applicants-page {
+  padding-top: 40px;
+  padding-bottom: 60px;
+  min-height: calc(100vh);
+}
+
+.applicants-page h1 {
+  font-size: 24px;
+}
+
+.sort {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.sort p {
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.sortButton {
+  background-color: #ffffff;
+  border: none;
+  margin-left: 10px;
+}
+
+
+/* -- profile page -- */
+
+.show-sponsor-applicant {
+  display: flex;
+  border-bottom: 5px solid #212322;
+}
+
+.show-sponsor-applicant img {
+  width: 100%;
+}
+
+.link {
+  align-self: center;
+}
+
+.status-img {
+  width: 100px;
+  margin-right: 10px;
+  margin-top: 7px;
+}
+
+.property {
+  padding: 10px 0;
+  font-size: 16px;
+}
+
+.label {
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.profile-card {
+  margin: 20px 0px 0px 0px;
+}
+
+.profile-card img {
+  width: 100%;
+  margin-top: 20px;
+}
+
+.profile-name-button  {
+ display: flex;
+ align-content: flex-start;
+ justify-content: space-between; 
+ padding-top: 10px;
+}
+
+.profile-page {
+  padding-top: 20px;
+  margin-bottom: 40px;
+}
+
+}

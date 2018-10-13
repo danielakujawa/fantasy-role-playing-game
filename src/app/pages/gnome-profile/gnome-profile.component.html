@@ -1,10 +1,36 @@
-<div *ngIf="gnomes">
-  <img width="100px" src="{{gnomes[id].thumbnail}}">
-  <h3>{{gnomes[id].name}}</h3>
-  <p>Age: {{gnomes[id].age}}</p>
-  <p>Weight: {{gnomes[id].weight}}</p>
-  <p>Height: {{gnomes[id].height}}</p>
-  <p>Hair color: {{gnomes[id].hair_color}}</p>
-  <p>Professions: {{gnomes[id].professions}}</p>
-  <p>Friends: {{gnomes[id].friends}}</p>
+<div class="container compact profile-page" *ngIf="gnomes">
+
+  <div class="profile-card">
+    <img width="100px" src="{{gnomes[id].thumbnail}}">
+  </div>
+
+  <div>
+    <h3>{{gnomes[id].name}}</h3>
+  </div>
+
+  <div class="property">
+      <p class="label">Age:</p>
+      <p class="value">{{gnomes[id].age}}</p>
+  </div>
+  <div class="property">
+      <p class="label">Weight:</p>
+      <p class="value">{{gnomes[id].weight}}</p>
+  </div>
+  <div class="property">
+      <p class="label">Height:</p>
+      <p class="value">{{gnomes[id].height}}</p>
+  </div>
+  <div class="property">
+      <p class="label">Hair color:</p>
+      <p class="value">{{gnomes[id].hair_color}}</p>
+  </div>
+  <div class="property">
+      <p class="label">Professions</p>
+      <p class="value">{{gnomes[id].professions}}</p>
+  </div>
+  <div class="property">
+      <p class="label">Friends:</p>
+      <p class="value">{{gnomes[id].friends}}</p>
+  </div>
 </div>
+  
