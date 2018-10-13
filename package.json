@@ -3,11 +3,17 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "node server.js",
+    "heroku-prebuild": "rm -rf node_modules && npm cache clean --force",
+    "postinstall": "ng build --aot --prod",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
+  },
+  "engines": {
+    "node": "v10.5.0",
+    "npm": "6.1.0"
   },
   "private": true,
   "dependencies": {
@@ -21,6 +27,7 @@
     "@angular/platform-browser-dynamic": "^6.0.3",
     "@angular/router": "^6.0.3",
     "core-js": "^2.5.4",
+    "express": "^4.16.4",
     "rxjs": "^6.0.0",
     "zone.js": "^0.8.26"
   },
