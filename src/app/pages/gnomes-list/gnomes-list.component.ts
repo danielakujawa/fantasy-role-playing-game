@@ -20,6 +20,7 @@ export class GnomesListComponent implements OnInit {
 
   ngOnInit() {
     this.getData();
+    localStorage.setItem('id', '');
   }
 
   getData() {
