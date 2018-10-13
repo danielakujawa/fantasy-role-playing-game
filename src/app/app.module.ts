@@ -7,6 +7,7 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { GnomesListComponent } from './pages/gnomes-list/gnomes-list.component';
 import { DataListService } from './services/data-list.service';
+import { GnomeCardComponent } from './components/gnome-card/gnome-card.component';
 
 const routes: Routes = [
   { path: '', component: GnomesListComponent}
@@ -15,7 +16,8 @@ const routes: Routes = [
 @NgModule({
   declarations: [
     AppComponent,
-    GnomesListComponent
+    GnomesListComponent,
+    GnomeCardComponent
   ],
   imports: [
     BrowserModule,

@@ -10,9 +10,11 @@ import { DataListService } from '../../services/data-list.service';
 })
 
 export class GnomesListComponent implements OnInit {
-
   gnomes: any;
-  professions: Array<string> = [];
+  arrayAllProfessions: Array<any> = [];
+  arrayUniqueProfessions: Array<any> = [];
+  arrayFilteredGnomes: Array<any> = [];
+
 
   constructor(private DataService: DataListService) {}
 
@@ -25,7 +27,6 @@ export class GnomesListComponent implements OnInit {
       .then((result) => {
         this.gnomes = result.Brastlewark;
         this.getAllProfessions(this.gnomes);
-        console.log(this.gnomes);
       })
       .catch((err) => {
         console.log(err);
@@ -36,8 +37,34 @@ export class GnomesListComponent implements OnInit {
   getAllProfessions(result) {
     for (let i = 0; i < result.length; i++) {
       for (let ix = 0; ix < result[i].professions.length; ix++) {
-        console.log(result[i].professions[ix]);
+        this.arrayAllProfessions.push(result[i].professions[ix]);
       }
     }
+    this.getUniqueProfessions();
   }
+
+
+  getUniqueProfessions() {
+    this.arrayAllProfessions.reduce((a, b) => {
+      if (this.arrayUniqueProfessions.indexOf(b) < 0) {
+        this.arrayUniqueProfessions.push(b);
+        return a;
+      }
+    }, []);
+  }
+
+  submit(value) {
+
+    this.DataService.getByProfession(value); {
+      this.arrayFilteredGnomes = [];
+      this.gnomes.forEach(gnome => {
+        gnome.professions.forEach(profession => {
+          if (profession === value) {
+            this.arrayFilteredGnomes.push(gnome);
+          }
+        });
+      });
+
+    }
+   }
 }

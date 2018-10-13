@@ -18,4 +18,9 @@ export class DataListService {
       return this.httpClient.get(`${this.baseUrl}`)
       .toPromise();
     }
+
+    getByProfession(value): Promise<any> {
+      return this.httpClient.get(`${this.baseUrl}`)
+      .toPromise();
+    }
   }

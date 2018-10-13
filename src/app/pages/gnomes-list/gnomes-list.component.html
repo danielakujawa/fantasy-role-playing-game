@@ -1,8 +1,9 @@
-<select name="professions-list">
-  <option value="" *ngFor="let gnome of gnomes">Find Gnomes by profession</option>
-  <option value="" *ngFor="let gnome of gnomes">{{gnome.name}}</option>
-</select>
+<div>
+  <h1>Gnomes Town</h1>
+  <select name="professions-list" ngModel id="professions-list" (change)="submit($event.target.value)">
+    <option value="">Find Gnomes by profession</option>
+    <option value="{{profession}}" *ngFor="let profession of arrayUniqueProfessions">{{profession}}</option>
+  </select>
+</div>
 
-<p>
-  gnomes-list works!
-</p>
+  <app-gnome-card *ngFor="let gnome of arrayFilteredGnomes" [gnome]="gnome"></app-gnome-card>
