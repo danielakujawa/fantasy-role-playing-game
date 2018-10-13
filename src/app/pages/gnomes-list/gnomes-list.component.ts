@@ -11,6 +11,10 @@ import { DataListService } from '../../services/data-list.service';
 
 export class GnomesListComponent implements OnInit {
   gnomes: any;
+  thumbnail: any;
+  name: any;
+  professions: any;
+  id: any;
   arrayAllProfessions: Array<any> = [];
   arrayUniqueProfessions: Array<any> = [];
   arrayFilteredGnomes: Array<any> = [];
