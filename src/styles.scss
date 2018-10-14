@@ -15,7 +15,7 @@ body {
 /* ---- typography ---- */
 
 body {
-  color: #111;
+  color: #212322;
   font-size: 16px;
   line-height: 147%;
   font-family: 'Assistant-Regular', sans-serif;
@@ -52,28 +52,60 @@ p {
   line-height: 1.34;
 }
 
-
-/* #site-main {
-  min-height: 
-} */
+/* ------- home-page -------- */
 
 .container {
   margin: 0 20px;
 }
 
-@media(min-width: 520px){
-  
-  .container.compact {
-    max-width: 480px;
-    margin: 0 auto;
-    padding-bottom: 40px;
-  }
-
+.sort-header {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 20px 20px 0 20px;
+  background: hsl(154, 69%, 35%);
+  box-shadow: 0 2px 12px 0 hsla(0, 0%, 0%, 0.2) ;
 }
 
-/* ------- home-page -------- */
+.sort-header h1 {
+  color: hsl(0, 0%, 100%);
+  font-size: 24px;
+}
+
+.sort {
+  display: flex;
+  margin-bottom: 20px;
+  align-items: center;
+  justify-content: center; 
+  width: 100%;
+}
+
+.sort p {
+  font-size: 12px;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: hsl(154, 69%, 85%);
+}
+
+.sort-select {
+  background-color: #ffffff;
+  border: 1px solid #cfd7e6;
+  border-radius: 4px;
+  margin-left: 10px;
+  font-size: 14px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  width: 100%;
+  max-width: 400px;
+}
+
 
 /* -- cards home -- */
+.gnomes-page {
+  padding-top: 20px;
+  padding-bottom: 60px;
+}
+
 .cards-container{
   margin: 0 auto;
   display: flex;
@@ -83,17 +115,22 @@ p {
 }
 
 .profile-pic-home {
-  border-bottom: 10px solid #d41e1e;
+  border-bottom: 10px solid #1C9963;
 }
 
 .card-home {
-  background: #212322;
+  background: #ffffff;
+  background-image: linear-gradient(#ffffff,#F9F7FC);
+  border-radius: 4px;
+  box-shadow: 0 4px 6px 0 hsla(0, 0%, 0%, 0.2);
   margin: 0 20px 40px 20px;
   max-width: 520px;
 }
 
 .card-home img {
   width: 100%;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
 }
 
 .card-home .description {
@@ -101,13 +138,13 @@ p {
 }
 
 .card-home p {
-  color: #FFFFFF;
+  color: hsla(150, 3%, 13%, 0.75);
   margin-bottom: 20px;
 }
 
 .card-home h3 {
- margin-top: 0;
- color: #f2f2f2;
+ margin-top: 5px;
+ color: hsla(150, 3%, 13%, 0.8);
 }
 
 .card-home a {
@@ -120,7 +157,7 @@ p {
   font-size: 16px;
   font-weight: bold;
   border-radius: 4px;
-  background-color: #ff3636;
+  background-color: #1C9963;
   width: 100%;
   line-height: 55px;
   display: block;
@@ -130,12 +167,63 @@ p {
   border: none;
 }
 
+/* --- Gnome profile page --- */
+
+.profile-card {
+  margin: 20px 0px 0px 0px;
+  background: #ffffff;
+  background-image: linear-gradient(#ffffff,#F9F7FC);
+  border-radius: 4px;
+  box-shadow: 0 4px 6px 0 hsla(0, 0%, 0%, 0.2);
+  padding-bottom: 5px;
+}
+
+.profile-card h3 {
+  margin-top: 20px;
+}
+
+.profile-card h3, .label, .value {
+ color: hsla(150, 3%, 13%, 0.8);
+ padding: 0 20px;
+}
+
+.label {
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.value {
+  margin-bottom: 20px;
+}
+
+.profile-card p {
+  color: hsla(150, 3%, 13%, 0.75);
+ }
+
+.profile-card img {
+  width: 100%;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+}
 
 
+/* -- tablet version -- */
 
-/* -- web version --- home -- */
+@media(min-width: 520px){
 
-@media (min-width: 767px ){
+  .container.compact {
+    max-width: 480px;
+    margin: 0 auto;
+    padding-bottom: 40px;
+  }
+
+}
+
+/* -- web version -- */
+
+@media(min-width: 767px ){
+
+  /* --- Home --- */
 
   .container {
     max-width: 728px;
@@ -151,13 +239,17 @@ p {
   .card-home {
     width: 100%;
     max-width: 280px;
-    margin-left: 0;
-    margin-right: 0;
   }
 
-  .card-home img {
-    object-fit: cover;
-    height: 250px;
+  .masonry { 
+    display: flex;
+    flex-flow: column wrap;
+    max-height: 30000px; /* revisar despues del fix de los espacios entrepalabras y comas y con la paginación*/
+    margin-left: -10px;
+  }
+  
+  .masonry-brick {
+    margin: 0 10px 10px 0;
   }
 
   .card-home-content {
@@ -169,85 +261,35 @@ p {
     align-self: flex-end;
   }
 
-  /* -- applicants page -- */
+  /* -- gnomes list page -- */
 
-.applicants-page {
-  padding-top: 40px;
-  padding-bottom: 60px;
-  min-height: calc(100vh);
-}
+  .gnomes-page {
+    min-height: calc(100vh);
+  }
 
-.applicants-page h1 {
-  font-size: 24px;
-}
+  /* -- gnome profile page -- */
 
-.sort {
-  display: flex;
-  margin-bottom: 20px;
-}
+  .property {
+    padding: 10px 0;
+    font-size: 16px;
+  }
 
-.sort p {
-  font-weight: bold;
-  text-transform: uppercase;
-}
+  .profile-card {
+    margin: 20px 0px 0px 0px;
+  }
 
-.sortButton {
-  background-color: #ffffff;
-  border: none;
-  margin-left: 10px;
-}
+  .profile-card img {
+    width: 100%;
+  }
 
+  .profile-page {
+    padding-top: 20px;
+    margin-bottom: 40px;
+  }
 
-/* -- profile page -- */
-
-.show-sponsor-applicant {
-  display: flex;
-  border-bottom: 5px solid #212322;
-}
-
-.show-sponsor-applicant img {
-  width: 100%;
-}
-
-.link {
-  align-self: center;
-}
-
-.status-img {
-  width: 100px;
-  margin-right: 10px;
-  margin-top: 7px;
-}
-
-.property {
-  padding: 10px 0;
-  font-size: 16px;
-}
-
-.label {
-  font-weight: bold;
-  font-size: 16px;
-}
-
-.profile-card {
-  margin: 20px 0px 0px 0px;
-}
-
-.profile-card img {
-  width: 100%;
-  margin-top: 20px;
-}
-
-.profile-name-button  {
- display: flex;
- align-content: flex-start;
- justify-content: space-between; 
- padding-top: 10px;
-}
-
-.profile-page {
-  padding-top: 20px;
-  margin-bottom: 40px;
-}
+  .sort p {
+    font-size: 16px;
+  }
 
 }
+

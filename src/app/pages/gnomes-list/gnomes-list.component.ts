@@ -20,7 +20,9 @@ export class GnomesListComponent implements OnInit {
   arrayFilteredGnomes: Array<any> = [];
 
 
-  constructor(private DataService: DataListService) {}
+  constructor(private DataService: DataListService) {
+
+  }
 
   ngOnInit() {
     this.getData();
@@ -29,22 +31,23 @@ export class GnomesListComponent implements OnInit {
 
   getData() {
     this.DataService.getAllGnomes()
-      .then((result) => {
-        this.gnomes = result.Brastlewark;
-        this.getAllProfessions(this.gnomes);
+    .then((result) => {
+      this.gnomes = result.Brastlewark;
+
+      this.getAllProfessions(this.gnomes);
       })
       .catch((err) => {
         console.log(err);
       });
+    }
 
-  }
-
-  getAllProfessions(result) {
-    for (let i = 0; i < result.length; i++) {
-      for (let ix = 0; ix < result[i].professions.length; ix++) {
-        this.arrayAllProfessions.push(result[i].professions[ix]);
+    getAllProfessions(result) {
+      for (let i = 0; i < result.length; i++) {
+        for (let ix = 0; ix < result[i].professions.length; ix++) {
+          this.arrayAllProfessions.push(result[i].professions[ix]);
       }
     }
+
     this.getUniqueProfessions();
   }
 
@@ -59,7 +62,6 @@ export class GnomesListComponent implements OnInit {
   }
 
   submit(value) {
-
     this.DataService.getByProfession(value); {
       this.arrayFilteredGnomes = [];
       this.gnomes.forEach(gnome => {

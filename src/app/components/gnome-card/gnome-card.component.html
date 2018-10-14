@@ -1,7 +1,9 @@
-<div class="card-home">
-  <img src="{{gnome.thumbnail}}">
-  <h3>{{gnome.name}}</h3>
-  <p>{{gnome.professions}}</p>
-  <a [routerLink]="['/profile']" (click)="getGnomeId(gnome.id)" class="button">view profile</a>       
+<div class="card-home masonry-brick">
+  <img class="profile-pic-home" src="{{gnome.thumbnail}}">
+  <div class="description">
+    <h3>{{gnome.name}}</h3>
+    <p>{{gnome.professions}}</p>
+    <a [routerLink]="['/profile']" (click)="getGnomeId(gnome.id)" class="button">view profile</a>       
+  </div> 
 </div>
 

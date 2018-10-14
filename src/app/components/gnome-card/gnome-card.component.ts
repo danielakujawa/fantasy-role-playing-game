@@ -10,10 +10,9 @@ export class GnomeCardComponent implements OnInit {
 
   @Input() gnome: GnomesListComponent;
 
-  constructor() { }
-
   ngOnInit() {
   }
+  constructor() {}
 
   getGnomeId(id) {
     localStorage.setItem('id', id);

@@ -21,10 +21,13 @@ export class GnomeProfileComponent implements OnInit {
     this.DataService.getAllGnomes()
     .then((result) => {
       this.gnomes = result.Brastlewark;
+      this.gnomes[this.id].professions = this.gnomes[this.id].professions.join(', ');
+      this.gnomes[this.id].friends = this.gnomes[this.id].friends.join(', ');
     })
     .catch((error) => {
       console.log(error);
     });
   }
+
 
 }
