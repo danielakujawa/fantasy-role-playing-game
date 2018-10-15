@@ -33,7 +33,6 @@ export class GnomesListComponent implements OnInit {
     this.DataService.getAllGnomes()
     .then((result) => {
       this.gnomes = result.Brastlewark;
-
       this.getAllProfessions(this.gnomes);
       })
       .catch((err) => {
@@ -45,6 +44,7 @@ export class GnomesListComponent implements OnInit {
       for (let i = 0; i < result.length; i++) {
         for (let ix = 0; ix < result[i].professions.length; ix++) {
           this.arrayAllProfessions.push(result[i].professions[ix]);
+
       }
     }
 
