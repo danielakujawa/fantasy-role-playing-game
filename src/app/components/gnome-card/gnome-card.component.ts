@@ -8,12 +8,12 @@ import { GnomesListComponent } from '../../pages/gnomes-list/gnomes-list.compone
 })
 
 export class GnomeCardComponent implements OnInit {
-  spacedProfessions: any;
+  professions: any;
 
   @Input() gnome: GnomesListComponent;
 
   ngOnInit() {
-    this.spacedProfessions = this.gnome.professions.join(', ');
+    this.professions = this.gnome.professions.join(', ');
   }
 
   constructor() {}
