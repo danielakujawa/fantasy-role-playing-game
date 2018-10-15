@@ -19,9 +19,10 @@ export class GnomesListComponent implements OnInit {
   arrayUniqueProfessions: Array<any> = [];
   arrayFilteredGnomes: Array<any> = [];
 
-
   constructor(private DataService: DataListService) {
-
+    for (let i = 1; i <= 100; i++) {
+      this.arrayFilteredGnomes.push(`gnome ${i}`);
+    }
   }
 
   ngOnInit() {

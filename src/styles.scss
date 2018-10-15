@@ -233,7 +233,7 @@ p {
   .cards-container {
     max-width: 728px;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
   }
 
   .card-home {
@@ -244,7 +244,7 @@ p {
   .masonry { 
     display: flex;
     flex-flow: column wrap;
-    max-height: 30000px; /* revisar despues del fix de los espacios entrepalabras y comas y con la paginación*/
+    max-height: 500vh;
     margin-left: -10px;
   }
   

@@ -12,8 +12,8 @@
 </div>
 <div class="container gnomes-page">
     
-  <div class="cards-container masonry">
-    <app-gnome-card *ngFor="let gnome of arrayFilteredGnomes" [gnome]="gnome"></app-gnome-card>
+  <div class="cards-container masonry">  
+    <app-gnome-card *ngFor="let gnome of arrayFilteredGnomes | paginate: { itemsPerPage: 20, currentPage: p }" [gnome]="gnome"></app-gnome-card>
   </div>
+  <pagination-controls class="cards-container" *ngIf="gnomes" (pageChange)="p = $event"></pagination-controls>
 </div>
-
