@@ -16,7 +16,9 @@ export class GnomeCardComponent implements OnInit {
     this.professions = this.gnome.professions.join(', ');
   }
 
-  constructor() {}
+  constructor() {
+
+  }
 
   getGnomeId(id) {
     localStorage.setItem('id', id);

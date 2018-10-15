@@ -5,13 +5,12 @@
   <div class="sort">
     <p>Find:</p>
     <select class="sort-select" name="professions-list" ngModel id="professions-list" (change)="submit($event.target.value)">
-      <option value="">Gnomes by Profession</option>
+      <option value="" disabled>Gnomes by Profession</option>
       <option value="{{profession}}" *ngFor="let profession of arrayUniqueProfessions">{{profession}}</option>
     </select>
   </div>
 </div>
 <div class="container gnomes-page">
-    
   <div class="cards-container masonry">  
     <app-gnome-card *ngFor="let gnome of arrayFilteredGnomes | paginate: { itemsPerPage: 20, currentPage: p }" [gnome]="gnome"></app-gnome-card>
   </div>
