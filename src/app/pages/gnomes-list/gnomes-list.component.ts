@@ -10,6 +10,7 @@ import { DataListService } from '../../services/data-list.service';
 })
 
 export class GnomesListComponent implements OnInit {
+  p: number;
   gnomes: any;
   thumbnail: any;
   name: any;
