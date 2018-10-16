@@ -20,6 +20,7 @@ export class GnomesListComponent implements OnInit {
   arrayUniqueProfessions: Array<any> = [];
   arrayFilteredGnomes: Array<any> = [];
 
+
   constructor(private DataService: DataListService) {
     for (let i = 1; i <= 100; i++) {
       this.arrayFilteredGnomes.push(`gnome ${i}`);
@@ -66,6 +67,7 @@ export class GnomesListComponent implements OnInit {
   submit(value) {
     this.DataService.getByProfession(value); {
       this.arrayFilteredGnomes = [];
+      this.p = 1;
       this.gnomes.forEach(gnome => {
         gnome.professions.forEach(profession => {
           if (profession === value) {
@@ -76,4 +78,4 @@ export class GnomesListComponent implements OnInit {
 
     }
    }
-}
+  }

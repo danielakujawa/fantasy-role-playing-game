@@ -226,31 +226,34 @@ p {
   /* --- Home --- */
 
   .container {
-    max-width: 870px;
+    max-width: 1000px;
     margin: 0 auto;
   }
 
   .cards-container {
-    max-width: 870px;
     display: flex;
     justify-content: center;
   }
 
   .card-home {
     width: 100%;
-    max-width: 280px;
+    max-width: 250px;
   }
 
-  .masonry { 
-    display: flex;
-    flex-flow: column wrap;
-    max-height: 500vh;
-    margin-left: -10px;
+  .card-home img {
+    height: 200px;
   }
   
-  .masonry-brick {
-    margin: 0 10px 10px 0;
-  }
+  // .masonry { 
+  //   display: flex;
+  //   flex-flow: column wrap;
+  //   max-height: 500vh;
+  //   margin-left: -10px;
+  // }
+  
+  // .masonry-brick {
+  //   margin: 0 10px 10px 0;
+  // }
 
   .card-home-content {
     display: flex;
